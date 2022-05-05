@@ -1,0 +1,28 @@
+{
+  "root": "apps/cart-e2e",
+  "sourceRoot": "apps/cart-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/cart-e2e/cypress.json",
+        "devServerTarget": "cart:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "cart:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/cart-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["cart"]
+}

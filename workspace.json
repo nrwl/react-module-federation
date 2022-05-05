@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "projects": {
+    "about": "apps/about",
+    "about-e2e": "apps/about-e2e",
+    "about-main": "libs/about-main",
+    "cart": "apps/cart",
+    "cart-e2e": "apps/cart-e2e",
+    "cart-main": "libs/cart-main",
+    "host": "apps/host",
+    "host-e2e": "apps/host-e2e",
+    "shared-components": "libs/shared-components",
+    "shop": "apps/shop",
+    "shop-e2e": "apps/shop-e2e",
+    "shop-main": "libs/shop-main"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "root": "libs/shop-main",
+  "sourceRoot": "libs/shop-main/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/shop-main/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shop-main"],
+      "options": {
+        "jestConfig": "libs/shop-main/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "root": "libs/shared-components",
+  "sourceRoot": "libs/shared-components/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/shared-components/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared-components"],
+      "options": {
+        "jestConfig": "libs/shared-components/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

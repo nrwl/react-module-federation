@@ -1,0 +1,27 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@react-module-federation/about-main": ["libs/about-main/src/index.ts"],
+      "@react-module-federation/cart-main": ["libs/cart-main/src/index.ts"],
+      "@react-module-federation/shared-components": [
+        "libs/shared-components/src/index.ts"
+      ],
+      "@react-module-federation/shop-main": ["libs/shop-main/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

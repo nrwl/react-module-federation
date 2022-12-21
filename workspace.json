@@ -13,5 +13,6 @@
     "shop": "apps/shop",
     "shop-e2e": "apps/shop-e2e",
     "shop-main": "libs/shop-main"
-  }
+  },
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json"
 }

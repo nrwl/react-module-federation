@@ -54,6 +54,7 @@
     "nx": "16.6.0",
     "nx-cloud": "16.2.0",
     "prettier": "2.8.8",
+    "semantic-release-unsquash": "^0.1.2",
     "ts-jest": "29.1.1",
     "ts-node": "10.9.1",
     "typescript": "5.1.6"

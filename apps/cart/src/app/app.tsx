@@ -5,7 +5,7 @@ export function App() {
   return (
     <>
       <CartMain/>
-      <div />
+      <div>Card Details</div>
     </>
   );
 }

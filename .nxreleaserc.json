@@ -5,5 +5,8 @@
   "repositoryUrl": "https://github.com/yzhylin/react-module-federation.git",
   "branches": [
     "main"
+  ],
+  "plugins": [
+    "semantic-release-unsquash"
   ]
 }

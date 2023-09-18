@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/yzhylin/react-module-federation/compare/host-v1.0.1...host-v1.0.2) (2023-09-18)
+
+
+### Bug Fixes
+
+* typo ([67999cc](https://github.com/yzhylin/react-module-federation/commit/67999ccf3164f5d38bc321a1d85641f98515d90b))
+
 ## [1.0.1](https://github.com/yzhylin/react-module-federation/compare/host-v1.0.0...host-v1.0.1) (2023-09-18)
 
 

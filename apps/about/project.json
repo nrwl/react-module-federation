@@ -4,9 +4,20 @@
   "sourceRoot": "apps/about/src",
   "projectType": "application",
   "targets": {
+    "semantic-release": {
+      "executor": "@theunderscorer/nx-semantic-release:semantic-release",
+      "options": {
+        "github": false,
+        "changelog": true,
+        "npm": false,
+        "tagFormat": "about-v${VERSION}"
+      }
+    },
     "build": {
       "executor": "@nx/webpack:webpack",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "defaultConfiguration": "production",
       "options": {
         "compiler": "babel",
@@ -16,8 +27,13 @@
         "main": "apps/about/src/main.ts",
         "polyfills": "apps/about/src/polyfills.ts",
         "tsConfig": "apps/about/tsconfig.app.json",
-        "assets": ["apps/about/src/favicon.ico", "apps/about/src/assets"],
-        "styles": ["apps/about/src/styles.css"],
+        "assets": [
+          "apps/about/src/favicon.ico",
+          "apps/about/src/assets"
+        ],
+        "styles": [
+          "apps/about/src/styles.css"
+        ],
         "scripts": [],
         "webpackConfig": "apps/about/webpack.config.js"
       },
@@ -65,14 +81,20 @@
     },
     "lint": {
       "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["apps/about/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": [
+          "apps/about/**/*.{ts,tsx,js,jsx}"
+        ]
       }
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/apps/about"],
+      "outputs": [
+        "{workspaceRoot}/coverage/apps/about"
+      ],
       "options": {
         "jestConfig": "apps/about/jest.config.ts",
         "passWithNoTests": true

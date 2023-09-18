@@ -4,9 +4,20 @@
   "sourceRoot": "apps/cart/src",
   "projectType": "application",
   "targets": {
+    "semantic-release": {
+      "executor": "@theunderscorer/nx-semantic-release:semantic-release",
+      "options": {
+        "github": false,
+        "changelog": true,
+        "npm": false,
+        "tagFormat": "cart-v${VERSION}"
+      }
+    },
     "build": {
       "executor": "@nx/webpack:webpack",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "defaultConfiguration": "production",
       "options": {
         "compiler": "babel",
@@ -16,8 +27,13 @@
         "main": "apps/cart/src/main.ts",
         "polyfills": "apps/cart/src/polyfills.ts",
         "tsConfig": "apps/cart/tsconfig.app.json",
-        "assets": ["apps/cart/src/favicon.ico", "apps/cart/src/assets"],
-        "styles": ["apps/cart/src/styles.css"],
+        "assets": [
+          "apps/cart/src/favicon.ico",
+          "apps/cart/src/assets"
+        ],
+        "styles": [
+          "apps/cart/src/styles.css"
+        ],
         "scripts": [],
         "webpackConfig": "apps/cart/webpack.config.js"
       },
@@ -65,14 +81,20 @@
     },
     "lint": {
       "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["apps/cart/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": [
+          "apps/cart/**/*.{ts,tsx,js,jsx}"
+        ]
       }
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/apps/cart"],
+      "outputs": [
+        "{workspaceRoot}/coverage/apps/cart"
+      ],
       "options": {
         "jestConfig": "apps/cart/jest.config.ts",
         "passWithNoTests": true

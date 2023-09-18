@@ -6,7 +6,9 @@
   "targets": {
     "build": {
       "executor": "@nx/webpack:webpack",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "defaultConfiguration": "production",
       "options": {
         "compiler": "babel",
@@ -16,8 +18,13 @@
         "main": "apps/host/src/main.ts",
         "polyfills": "apps/host/src/polyfills.ts",
         "tsConfig": "apps/host/tsconfig.app.json",
-        "assets": ["apps/host/src/favicon.ico", "apps/host/src/assets"],
-        "styles": ["apps/host/src/styles.css"],
+        "assets": [
+          "apps/host/src/favicon.ico",
+          "apps/host/src/assets"
+        ],
+        "styles": [
+          "apps/host/src/styles.css"
+        ],
         "scripts": [],
         "webpackConfig": "apps/host/webpack.config.js"
       },
@@ -65,14 +72,20 @@
     },
     "lint": {
       "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["apps/host/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": [
+          "apps/host/**/*.{ts,tsx,js,jsx}"
+        ]
       }
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/apps/host"],
+      "outputs": [
+        "{workspaceRoot}/coverage/apps/host"
+      ],
       "options": {
         "jestConfig": "apps/host/jest.config.ts",
         "passWithNoTests": true
@@ -93,8 +106,21 @@
           "buildTarget": "host:build:production"
         }
       }
+    },
+    "semantic-release": {
+      "executor": "@theunderscorer/nx-semantic-release:semantic-release",
+      "options": {
+        "github": false,
+        "changelog": true,
+        "npm": false,
+        "tagFormat": "host-v${VERSION}"
+      }
     }
   },
   "tags": [],
-  "implicitDependencies": ["cart", "shop", "about"]
+  "implicitDependencies": [
+    "cart",
+    "shop",
+    "about"
+  ]
 }

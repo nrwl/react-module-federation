@@ -1,0 +1,9 @@
+{
+  "changelog": true,
+  "npm": true,
+  "github": false,
+  "repositoryUrl": "https://github.com/yzhylin/react-module-federation.git",
+  "branches": [
+    "master"
+  ]
+}

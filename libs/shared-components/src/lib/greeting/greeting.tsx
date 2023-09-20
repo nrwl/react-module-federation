@@ -1,8 +1,5 @@
-import styles from './greeting.module.css';
-
-/* eslint-disable-next-line */
 export interface GreetingProps {
-  title: string
+  title: string;
 }
 
 export function Greeting({ title }: GreetingProps) {

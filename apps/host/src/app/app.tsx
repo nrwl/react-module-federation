@@ -11,7 +11,7 @@ const Shop = React.lazy(() => import('shop/Module'));
 export function App() {
   return (
     <React.Suspense fallback={null}>
-      <h1>Store</h1>
+      <h1>Store!</h1>
       <ul>
         <li>
           <Link to="/">Shop</Link>

@@ -1,11 +1,17 @@
 {
-  "root": "apps/about",
+  "name": "about",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/about/src",
   "projectType": "application",
   "targets": {
+    "semantic-release": {
+      "executor": "@theunderscorer/nx-semantic-release:semantic-release"
+    },
     "build": {
-      "executor": "@nrwl/web:webpack",
-      "outputs": ["{options.outputPath}"],
+      "executor": "@nx/webpack:webpack",
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "defaultConfiguration": "production",
       "options": {
         "compiler": "babel",
@@ -15,8 +21,13 @@
         "main": "apps/about/src/main.ts",
         "polyfills": "apps/about/src/polyfills.ts",
         "tsConfig": "apps/about/tsconfig.app.json",
-        "assets": ["apps/about/src/favicon.ico", "apps/about/src/assets"],
-        "styles": ["apps/about/src/styles.css"],
+        "assets": [
+          "apps/about/src/favicon.ico",
+          "apps/about/src/assets"
+        ],
+        "styles": [
+          "apps/about/src/styles.css"
+        ],
         "scripts": [],
         "webpackConfig": "apps/about/webpack.config.js"
       },
@@ -45,7 +56,7 @@
       }
     },
     "serve": {
-      "executor": "@nrwl/react:module-federation-dev-server",
+      "executor": "@nx/react:module-federation-dev-server",
       "defaultConfiguration": "development",
       "options": {
         "buildTarget": "about:build",
@@ -63,22 +74,28 @@
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "executor": "@nx/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["apps/about/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": [
+          "apps/about/**/*.{ts,tsx,js,jsx}"
+        ]
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/about"],
+      "executor": "@nx/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/apps/about"
+      ],
       "options": {
         "jestConfig": "apps/about/jest.config.ts",
         "passWithNoTests": true
       }
     },
     "serve-static": {
-      "executor": "@nrwl/web:file-server",
+      "executor": "@nx/web:file-server",
       "defaultConfiguration": "development",
       "options": {
         "buildTarget": "about:build",

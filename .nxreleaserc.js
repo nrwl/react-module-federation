@@ -1,7 +1,7 @@
 module.exports = {
   changelog: true,
   npm: false,
-  github: true,
+  github: false,
   git: false,
   repositoryUrl: "https://github.com/yzhylin/react-module-federation.git",
   commitMessage: "chore(release): 🚀 release ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}",

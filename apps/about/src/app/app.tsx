@@ -5,7 +5,6 @@ export function App() {
   return (
     <>
       <AboutMain/>
-      <p>hello world!</p>
       <div>Hello from the about app</div>
     </>
   );

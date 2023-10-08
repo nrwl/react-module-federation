@@ -1,6 +1,6 @@
 import { writeFileSync } from 'fs'
 import { ReleaseExecutorSchema } from './schema';
-import { ExecutorContext } from '@nx/devkit';
+import {ExecutorContext, ProjectConfiguration} from '@nx/devkit';
 
 import { exec } from 'child_process';
 import { promisify } from 'util';
@@ -12,9 +12,16 @@ export default async function runExecutor(options: ReleaseExecutorSchema, contex
   const { workspace, root} = context;
 
   for (const name in  workspace.projects) {
-    const path = `${root}/${workspace.projects[name].root}`;
+    const config: ProjectConfiguration = workspace.projects[name]
 
-    writeFileSync(`${path}/${file}`, createReleaseNotes(), { flag: 'a'})
+    if (config.projectType !== 'application') {
+      continue
+    }
+
+    const path = `${root}/${config.root}`;
+    const releaseNotes = createReleaseNotes();
+
+    writeFileSync(`${path}/${file}`, releaseNotes, { flag: 'a'})
   }
 
   await execa(`git add . && git commit -m 'chore(release): 1.35.1 [skip ci]'`)

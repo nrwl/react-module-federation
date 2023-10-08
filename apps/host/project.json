@@ -4,6 +4,12 @@
   "sourceRoot": "apps/host/src",
   "projectType": "application",
   "targets": {
+    "release": {
+      "executor": "@react-module-federation/release:release",
+      "options": {
+        "verbose": true
+      }
+    },
     "build": {
       "executor": "@nx/webpack:webpack",
       "outputs": [

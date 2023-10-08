@@ -1,0 +1,9 @@
+{
+  "executors": {
+    "release": {
+      "implementation": "./src/executors/release/executor",
+      "schema": "./src/executors/release/schema.json",
+      "description": "release executor"
+    }
+  }
+}

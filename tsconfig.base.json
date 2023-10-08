@@ -17,6 +17,7 @@
     "paths": {
       "@react-module-federation/about-main": ["libs/about-main/src/index.ts"],
       "@react-module-federation/cart-main": ["libs/cart-main/src/index.ts"],
+      "@react-module-federation/release": ["libs/release/src/index.ts"],
       "@react-module-federation/shared-components": [
         "libs/shared-components/src/index.ts"
       ],

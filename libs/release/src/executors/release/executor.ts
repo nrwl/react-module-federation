@@ -9,14 +9,12 @@ const execa = promisify(exec);
 const file = 'CHANGELOG.md'
 
 export default async function runExecutor(options: ReleaseExecutorSchema, context: ExecutorContext) {
-  const { projectName, workspace, root} = context;
+  const { workspace, root} = context;
 
   for (const name in  workspace.projects) {
-    if (projectName === name) {
-      const path = `${root}/${workspace.projects[name].root}`;
+    const path = `${root}/${workspace.projects[name].root}`;
 
-      writeFileSync(`${path}/${file}`, 'changelog \n', { flag: 'a'})
-    }
+    writeFileSync(`${path}/${file}`, createReleaseNotes(), { flag: 'a'})
   }
 
   await execa(`git add . && git commit -m 'chore(release): 1.35.1 [skip ci]'`)
@@ -25,4 +23,40 @@ export default async function runExecutor(options: ReleaseExecutorSchema, contex
   return {
     success: true,
   };
+}
+
+const createReleaseDate = () => {
+  const now = new Date();
+
+  return {
+    year: now.getFullYear(),
+    month: `0${now.getMonth()}`.slice(-2),
+    date: `0${now.getDate()}`.slice(-2)
+  }
+}
+
+function createReleaseNotes() {
+  const { year, month, date} = createReleaseDate()
+
+  return `
+## [1.10.1](https://github.com/mckesson/b2b-connect-ordering-idb-idb-bff/compare/v1.35.0...v1.35.1) (${year}-${month}-${date})
+
+---
+
+### Features
+
+* **[XYZ-0000]** commit message goes here
+* **[XYZ-0000]** commit message goes here
+* **[XYZ-0000]** commit message goes here
+
+
+### Bug Fixes
+
+* **[XYZ-0000]** commit message goes here
+* **[XYZ-0000]** commit message goes here
+* **[XYZ-0000]** commit message goes here
+
+
+
+  `.trimStart();
 }
